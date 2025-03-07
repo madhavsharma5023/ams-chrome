@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>AMS LoggedIn Popup</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--===============================================================================================-->
+	<link type="image/png" href="images/icons/favicon.ico" rel="icon" />
+	<link href="vendor/jquery/jquery-ui.css" rel="stylesheet" />
+	<link href=
+	"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet">
+		
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link type="image/png" href="images/icons/Side Navigation.svg" rel="icon" />
+	<link type="image/png" href="images/icons/dropdown.svg" rel="icon" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/animate/animate.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/animsition/css/animsition.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/select2/select2.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/daterangepicker/daterangepicker.css" rel="stylesheet" />
+	<link type="text/css" href="vendor/daterangepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="css/util.css" rel="stylesheet" />
+	<link type="text/css" href="css/main.css" rel="stylesheet" />
+	<link type="text/css" href="css/button.css" rel="stylesheet" />
+<style>
+	.daterangepicker{
+		top: 116.4px !important;
+	}
+</style>
+	<!--===============================================================================================-->
+</head>
+
+<body style="background: #F9F9F9;">
+	<div class="limiter-checkin attendance">
+		<div class="container-login100-checkin ">
+			<div class="wrap-login100-attendance" style="width: 390px">
+				<div class="login-requestattendance">
+					<input type="hidden" id="hiddenFromDate" name="hiddenFromDate" />
+					<input type="hidden" id="shiftendtime" name="shiftendtime" />
+					<input id="attendanceDetailId" name="attendanceDetailId" type="hidden" value>
+					<a href="checkin.html"> <i class="fa fa-arrow-left" aria-hidden="true"> </i> </a>
+					<span style="text-align: center;margin-left: 26%; font-size: 15px;">Request Attendance</span>
+				</div>
+				<form style="padding: 8px 15px 33px 15px; background: #F9F9F9; margin-top: 3px;">
+					<div class="form-group row">
+						<div style="position: relative;">
+							<input class="form-control"  name="date" required style="margin-left: 15px; width: 307px; height: 50px;border: 1px solid rgba(0,0,0,.15) !important; font-size: 15px;" type="text" class="datetimepicker" id="date-range" autocomplete="off"/>	
+							<img src="images/icons/Side Navigation.svg" alt="Calendar" style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px; height: 20px; width: 20px;">
+						</div>
+							<label class="col-form-label request-checkin" style="margin-left: 25px; ">Select a date for request</label>
+					</div>
+
+					<div class="form-group row checkDiv">
+						<label class="col-form-label left" style="margin-left: 25px; font-size: 15px; font-weight: 500;">
+							Shift :
+						</label>
+						<input id="shift" name="shift" type="hidden" />
+
+						<label class="col-form-label right" id="shiftname" name="shiftname" style="margin-left: 90px; color: var(--tertiary-tertiary-500, #D20B53); font-size: 15px; font-weight: 500;">
+							</label>
+					</div>
+					<div class="form-group row checkDiv checkin-place" style="display: none;">
+						
+						<div class="container">
+							<div style="position: relative">
+								<input class="form-control"
+									type="text" id="check_in"  placeholder="Check In Time" style="font-size: 15px; width: 307px; height: 50px; border: 1px solid rgba(0,0,0,.15) !important; font-weight: 500;" autocomplete="off"/>
+									<img src="images/icons/dropdown.svg" alt="Calendar" style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px; height: 20px; width: 20px;">
+							</div>
+						</div>
+							
+					 
+						<!-- <input class="form-control updateCheck date"  id="check_in" name="check_in" type="time"
+							required="required"  style="margin-left: 15px; width: 307px; height: 50px; border: 1px solid rgba(0,0,0,.15) !important;"  />
+						<input class="form-control updateCheck date"  id="check_in_time" name="check_in" type="text"
+							required="required"  style="margin-left: 15px; width: 307px; height: 50px; border: 1px solid rgba(0,0,0,.15) !important; display: none;"  /> -->
+						<label class="col-form-label request-checkin" style="margin-left: 25px; font-weight: 500; ">Enter Check In Time
+						</label>
+					</div>
+					<div class="form-group row checkDiv checkout-place" style="display: none;">
+						<div class="container">
+							<div style="position: relative">
+								<input class="form-control"
+									type="text" id="check_out"  placeholder="Check Out Time" style="font-size: 15px; width: 307px; height: 50px; border: 1px solid rgba(0,0,0,.15) !important; font-weight: 500;"autocomplete="off"/>
+									<img src="images/icons/dropdown.svg" alt="Calendar" style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px; height: 20px; width: 20px;">
+							</div>
+						</div>
+						<!-- <input class="form-control updateCheck date" placeholder="Check Out Time" id="check_out" name="check_out" type="time"
+							required="required" value style="margin-left: 15px; width: 307px; height: 50px; border: 1px solid rgba(0,0,0,.15) !important;" />
+						<input class="form-control updateCheck date" placeholder="Check Out Time" id="check_out_time" name="check_out" type="text"
+							required="required" value style="margin-left: 15px; width: 307px; height: 50px; border: 1px solid rgba(0,0,0,.15) !important; display: none;" /> -->
+						<label class="col-form-label request-checkin" style="margin-left: 25px; font-weight: 500;">Enter Check Out Time
+						</label>
+					</div>
+					<div class="form-group row checkDiv ">
+						<!-- <label class="col-form-label" style="margin-left: 15px">Comment
+						</label> -->
+
+						<textarea class="form-control" id="comment" name="comment" required="required"
+							style="margin-left: 15px; width: 307px;  border: 1px solid rgba(0,0,0,.15) !important; font-size: 15px;" placeholder="Comment" rows="9" maxlength="240"></textarea>
+					</div>
+					<div class="form-group row">
+						<button class="btn btn-info updateDiv" id="Updatebtn" style="margin-left: 15px;background: #2B55B7;border-radius: 8px; font-size: 15px; height: 37px;">
+							 Submit Request</button>
+					</div>
+					<!--<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" id="Logout">Logout</button>
+						</div>
+					</div>-->
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- <input type="text" id="timePicker" placeholder="Select a time"> -->
+	<div id="myModal" class="modalss">
+		<div class="modal-contents" style="padding: 0 29px;">
+			<div class="modal-body"  style="text-align: center;margin-top: 106px;">
+				<label class="col-form-label right " id="modeltext" name="modeltext" style="font-size: 15px; font-weight: 500;" >
+				</label>							
+			</div>
+			<div class='d-flex' style="margin-top:5px; padding:10px; justify-content: space-evenly;">
+				<div class="col-8 decline-request" id="decline-buttons" style="font-size: 15px; font-weight: 500;"><label style="font-weight: 500;">Back to Request</label></div>
+			</div> 
+		</div>
+	</div>	
+	<div id="dropDownSelect1"></div>
+
+	<!--
+	===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+
+	<script src="vendor/jquery/jquery-ui.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="vendor/daterangepicker/bootstrap-datetimepicker.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/attendance.js"></script>
+	<script src="js/jquery.min.js"></script>
+	
+</body>
+
+</html>

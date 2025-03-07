@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AMS LoggedIn Popup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link type="image/png" href="images/icons/favicon.ico" rel="icon">
+    <link type="image/png" href="images/icons/clock.svg" rel="icon">
+    <link type="image/png" href="images/icons/Action Icons.png" rel="icon">
+    <!--===============================================================================================-->
+    <link type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link type="text/css" href="vendor/animate/animate.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link type="text/css" href="vendor/animsition/css/animsition.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link type="text/css" href="vendor/select2/select2.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link type="text/css" href="vendor/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link type="text/css" href="css/util.css" rel="stylesheet">
+    <link type="text/css" href="css/main.css" rel="stylesheet">
+    <link type="text/css" href="css/button.css" rel="stylesheet">
+    <!--===============================================================================================-->
+</head>
+
+<body style="background:#F8F8F8;">
+    <div class="limiter-checkin">
+        <div class="container-login100-checkin">
+            <div class="wrap-login100-checkin" style="width: 28rem">
+                <div class="login-header">
+                    <div class="nav-left">
+                        <img class="img-fluid rounded-circle shadow-1 " id="profile" src="images/icons/DL Logo.svg" alt width="38" height="35" style="width: 40px; height: 40px;">
+                        <div class="margin">
+                            <span id="username"></span><br>
+                            <span id="shiftprogress"></span>
+                        </div>          
+                    </div>
+                    <div class="right ">
+                        <a href="notification.html"><img src="images/icons/Notification.svg" alt="" srcset="">
+                        </a>
+                    </div>
+                </div>
+            
+                <form  class="login100-form checkin-page validate-form" style="padding: 8px 15px 33px 15px; background: #F8F8F8">
+                    <!-- <div class="time skelten" style="border-radius: 8px; height:295px;">
+
+                    </div> -->
+                    <div class="time skeleton" style="background: #2B55B7;border-radius: 8px;">
+                        <span class="p-b-35">
+                <div class="container">
+                  <div class="row">
+                <div class="col-md-12 d-flex justify-content-between">
+                    <div class="p-3"> 
+                      <span class="current-date" id="current-day"></span>
+                        <br>
+                        <span class="current-date" id="current-month"> </span>
+                    </div>
+                    <div>
+                        <span class="current-time" id="current-time"> </span>
+                        <span class="current-format" id="current-format"> </span>
+                        <span class="ist">IST </span>
+                    </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: -12px;width: 97%;margin: auto;">
+            <div class="col">
+                <label class="color-white">
+                    Check In
+                </label>
+                <img class="img-fluid rounded-circle shadow-1" style="margin-left: 12px;" id="profile" src="images/icons/clock.svg" alt width="38" height="35">
+                <!-- <input class="form-control mt-3" id="checkintime" name="checkintime" type="text" readonly>
+                <button class="btn btn-light mt-3 checkin" id="Checkin"> Check In
+                </button> -->
+            </div>
+            <div class="col">
+                <label class="color-white">
+                Check Out
+            </label>
+                <img class="img-fluid rounded-circle shadow-1" style="margin-left: 12px;" id="profile" src="images/icons/clock.svg" alt width="38" height="35">
+
+                <!-- <input class="form-control mt-3" id="checkouttime" name="checkouttime" type="text" readonly>
+
+                <button class="btn btn-light mt-3 rel" id="Checkout">
+                        Check Out
+                </button> -->
+            </div>
+            <div class="col">
+                <label class="color-white">
+                Total Hrs
+                </label>
+                <img class="img-fluid rounded-circle shadow-1" style="margin-left: 12px;" id="profile" src="images/icons/clock.svg" alt width="38" height="35"><br>
+                <!-- <label class="color-white  mt-3 ml-3" id="timehrs">
+                  -- --
+                  </label>
+                <label class="color-white  mt-3 ml-3" id="timedifference">
+                
+                  </label> -->
+            </div>
+        </div>
+        <div class="row" style="padding: 10px; width:97%; margin: auto;">
+            <div class="col">
+                <input class="form-control mt-3" id="checkintime" name="checkintime" type="text" readonly>
+                <button class="btn btn-light mt-3 rel" id="Checkin"> Check In
+                </button>
+            </div>
+            <div class="col">
+                <input class="form-control mt-3" id="checkouttime" name="checkouttime" type="text" readonly>
+                <button class="btn btn-light mt-3 rel" id="Checkout">Check Out
+                </button>
+            </div>
+            <div class="col">
+                <label class="color-white  mt-3 ml-3" id="timehrs">
+                    -- --
+                </label>
+                <label class="color-white  mt-3 ml-3" id="timedifference" style="padding-top: 4px;">
+                </label>
+            </div>     
+        </div>
+    </div>
+    </span>
+    </div>
+    <div class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <br>
+                    <span class="skeleton">Weekly Attendance OverView</span>
+                </div>
+            </div>
+            <div id="weeklyoverview" class="d-flex skeleton"></div>
+
+        </div>
+
+    </div>
+    <div>
+        <div class="container skeleton" style="height: 160px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <br>
+                    <span class="">Team Insights</span>
+                </div>
+            </div>
+            <div id="teaminsights" class="scrollmenu skeleton" >
+               
+            </div>
+
+        </div>
+
+    </div>
+    <a href="attendance_requests.html">
+        <div class="request-attendance d-flex skeleton ">
+                    <div class="col-2 limit">
+                        <label class="" id="req-count"></label>
+                    </div>
+                    <div class="col-8" style="margin-top: 9px;">
+                        <label class="text1">Attendance Requests</label>
+                        <div class="d-flex">
+                            <div id="resultContainer" class="d-flex color"></div>
+                            <div id="moreContainer" class="more"></div>
+                            <!-- <label  id="moreContainer" style="color: #6E8296; margin-left: 12px;"></label> -->
+                        </div>
+                    
+                    </div>
+                    <div class="col-2" style="margin-top: 18px;">
+                        <img src="images/icons/Action Icons.png" alt="" style="width: 23px;">
+                    </div>
+        </div>
+    </a>
+    <a href="leave_request.html">
+        <div class="request-attendance d-flex skeleton ">
+                    <div class="col-2 leave-limit">
+                        <label class="" id="leave-req-count"></label>
+                    </div>
+                    <div class="col-8" style="margin-top: 18px;">
+                        <label class="text1">Leave Requests</label>
+                        <div class="d-flex">
+                            <div id="leaveresultContainer" class="d-flex color"></div>
+                            <div id="leavemoreContainer" class="more"></div>   
+                         </div>
+                    </div>
+                    <div class="col-2" style="margin-top: 18px;">
+                        <img src="images/icons/Action Icons.png" alt="" style="width: 23px;">
+                    </div>
+        </div>
+    </a>
+    
+    <div class="quick-options skeleton" style="background: #fefefe ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-12 ">
+                    <br>
+                    <span>Quick Actions</span>
+                </div>
+            </div>
+            <div class="row " style="margin-top:-19px ">
+                <div class="col ">
+                    <a class="btn btn-light " href="requestattendance.html " style="font-size: 14px ">Request Attendance</a>
+                </div>
+                <div class="col ">
+                    <a class="btn btn-light " href="request_leave.html" style="font-size: 14px ">Request Leave</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    
+    <!-- <div class="more-options skeleton" style="background: #fefefe ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col ">
+                    <br>
+                    <span>More Options</span>
+                </div>
+            </div>
+            <div class="row " style="margin-top:-19px ">
+                <div class="col ">
+                    <button class="btn btn-light " id="Attendance " style="font-size: 14px ">
+                      Attendance
+                    </button>
+                </div>
+                <div class="col ">
+                    <button class="btn btn-light " id="Leave " style="font-size: 14px ">
+                      Leave
+                    </button>
+                </div>
+                <div class="col ">
+                    <button class="btn btn-light " id="Calendar " style="font-size: 14px ">
+                      Holiday Calendar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="container-login100-form-btn skeleton ">
+        <div class="wrap-login100-form-btn ">
+            <div class="login100-form-bgbtn "></div>
+            <button class="login100-form-btn " id="Logout">Logout</button>
+
+        </div>
+        </form>
+    </div>
+    </div>
+    </div>
+    <div id="myModal" class="modalss" >
+        <div class="checkin-modal-contents" >
+            <div class="d-flex" style="justify-content: space-between;">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 18px;">You did not marked your check-in for the day</h5>
+                <button type="button" id="decline-buttons" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+        </div>
+    </div>	
+    <div id="dropDownSelect1 "></div>
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js "></script>
+
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js "></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js "></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js "></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js "></script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js "></script>
+    <script src="vendor/daterangepicker/daterangepicker.js "></script>
+    <!--===============================================================================================-->
+    <script src="vendor/countdowntime/countdowntime.js "></script>
+    <!--===============================================================================================-->
+    <script src="js/checkin.js "></script>
+    <script src="js/jquery.min.js "></script>
+</body>
+
+</html>
+
+</html>

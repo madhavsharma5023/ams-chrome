@@ -1,0 +1,97 @@
+/* body{
+    margin: 0;
+    padding: 0;
+  }
+  .container{
+    text-align: center;
+    margin-top: 120px;
+  }
+  .btn{
+    border: 1px solid #3498db;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "montserrat";
+    cursor: pointer;
+    margin: 4px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-danger{
+    color: #3498db;
+  }
+  .btn-primary{
+    color: #3498db;
+
+  }
+  .btn-success{
+    color: #3498db;
+  }
+  .btn1,.btn2{
+    color: #3498db;
+  }
+  .btn3,.btn4{
+    color: rgb(10, 10, 10);
+  }
+  .btn1:hover,.btn2:hover{
+    color: rgb(10, 10, 10);
+  }
+  .btn3:hover,.btn4:hover{
+    color: #3498db;
+  }
+  .btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #0d0d0e;
+    z-index: -1;
+    transition: 0.8s;
+  }
+  .btn1::before,.btn3::before{
+    top: 0;
+    border-radius: 0 0 50% 50%;
+  }
+  .btn2::before,.btn4::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+  }
+  .btn3::before,.btn4::before{
+    height: 180%;
+  }
+  .btn1:hover::before,.btn2:hover::before{
+    height: 180%;
+  }
+  .btn3:hover::before,.btn4:hover::before{
+    height: 0%;
+  } */
+  ul {
+    display: table;
+    width: 70%;
+  }
+  li {
+    display: table-cell;
+    padding-left:2px;
+    padding-right:2px;
+    padding-bottom: 25px;
+  }
+  li.left { 
+    padding-left:2px;
+    padding-right:2px;
+    padding-bottom:25px;
+    text-align: left;}
+  
+  li.right { 
+    padding-left:2px;
+    padding-right:2px;
+    padding-bottom: 25px;
+    text-align: right;}
+    
+    li.center{ 
+      padding-left:125px;
+      padding-right:125px;
+      padding-bottom: 25px;
+      text-align: center;}

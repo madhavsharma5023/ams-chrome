@@ -1,0 +1,67 @@
+
+<div class="input-block wrap-input100" data-validate="Enter Url">
+  <input class="input100" type="text" name="url" id="url" required spellcheck="false">
+  <span class="placeholder focus-input100" data-placeholder="Workspace URL">
+Workspace URL 
+ </span>
+</div>
+<style>
+div.wrap-input100 {
+  position: relative;
+}
+div.wrap-input100 input {
+  font-size: 1.6rem;
+  color: #495055;
+  width: 350px;
+  padding: 15px 15px;
+  border-radius: 1rem;
+  border: 2px solid #D9D9D9;
+  outline: none;
+}
+div.wrap-input100 span.focus-input100 {
+  position: absolute;
+  margin: 17px 0;
+  padding: 0 4px;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  top: 0;
+  left: 17px;
+  transition: all 0.2s;
+  transform-origin: 0% 0%;
+  background: none;
+  pointer-events: none;
+}
+div.wrap-input100 input:valid+span.focus-input100,
+div.wrap-input100 input:focus+span.focus-input100 {
+  transform: scale(0.8) translateY(-30px);
+  background: #fff;
+}
+div.wrap-input100 input:focus {
+  color: #284B63;
+  border-color: #284B63;
+}
+div.wrap-input100 input:focus+span.focus-input100 {
+  color: #284B63;
+}
+</style>
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="vendor/daterangepicker/moment.min.js"></script>
+<script>
+  /*var date=  moment().format();
+  var weekDayName =  moment(date).format('dddd');
+  var monthname = moment(date).format('MMMM');
+  var realdate= moment(date).date();
+  var hour=moment().hour();
+  var minute=moment().minute();
+console.log(weekDayName);
+  console.log(monthname);
+  console.log(realdate);
+  console.log(hour);
+  console.log(minute);*/
+ var date= moment().format("dddd, MMMM Do YYYY");
+ var time=moment().format("h:mm");
+ console.log(time);
+ console.log(date);
+</script>

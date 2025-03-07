@@ -1,0 +1,2 @@
+This Extension is only for the Organisational purposes.The Extension will help the Users to Login into the organisation's site and directly mark their attendance through the extension and there will be no need to go to the original website.
+The User can do the Checkin and Checkout directly by signing in the extension.Currently this extension is in the bete version.

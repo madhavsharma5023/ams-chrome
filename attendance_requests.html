@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>AMS LoggedIn Popup</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--===============================================================================================-->
+	<link type="image/png" href="images/icons/favicon.ico" rel="icon" />
+	<link type="image/png" href="images/icons/Miscellaneous@2x.png" rel="icon" />
+	<link type="image/png" href="images/icons/Miscellaneous.png" rel="icon" />
+	<link type="image/png" href="images/icons/attendance-message-circle.svg" rel="icon" />
+	<link type="image/png" href="images/icons/attendance-Miscellaneous.svg" rel="icon" />
+	<link type="image/png" href="images/icons/attendance-Side Navigation.svg" rel="icon" />
+	<link type="image/png" href="images/icons/att-Miscellaneous.svg" rel="icon" />
+	<link type="image/png" href="images/icons/95382-recycling-bin 1.png" rel="icon" />
+	<link type="image/png" href="images/icons/popupIcons.svg" rel="icon" />
+	<link href="vendor/jquery/jquery-ui.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/animate/animate.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/animsition/css/animsition.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/select2/select2.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/daterangepicker/daterangepicker.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="css/util.css" rel="stylesheet" />
+	<link type="text/css" href="css/main.css" rel="stylesheet" />
+	<link type="text/css" href="css/button.css" rel="stylesheet" />
+	<link href="pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
+	<!--===============================================================================================-->
+</head>
+
+<body style="background:#F8F8F8;">
+	<div class="limiter-checkin attendance">
+		<div class="container-login100-checkin ">
+			<div class="wrap-login100-attendance" style="width: 390px; height: 600px;">
+				<div class="login-requestattendance">
+					<input id="attendanceDetailId" name="attendanceDetailId" type="hidden" value>
+					<a href="checkin.html"> <i class="fa fa-arrow-left" aria-hidden="true"> </i> </a>
+					<span style="text-align: center;margin-left: 22%;">Attendance Requests</span>
+				</div>
+				<div style="padding: 8px 15px 33px 15px; background: #F8F8F8;">
+					<!-- <div class="attendance-requests-popup d-flex" style="display: none;">
+						<img src="images/icons/popupIcons.svg">
+                        <div style="width: 90%;">Attendance approved</div>
+                    </div> -->
+					<div id="attendance-requests">
+                        
+                    </div>
+					<div  class="skeleton body-card"  style="width: 360px; height: 172px; margin-top:5px;"></div>
+					<div  class="skeleton body-card" style="width: 360px; height: 172px; margin-top:5px;"></div>
+					<div  class="skeleton body-card" style="width: 360px; height: 172px; margin-top:5px;"></div>
+				
+					
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+						<div class="modal-dialog" role="document" style="margin-top: 186px; height: 329px;">
+						  <div class="modal-content" style="padding: 82px 29px;">		
+							<div class="modal-body" style="text-align: center;">
+								Are you sure you want to decline this attendance request?
+								</div>
+								<div class='d-flex justify-content-space' style="margin-top:5px; padding:10px; justify-content: space-evenly;">
+									<div class=" d-flex col-5 decline" id="decline-button" data-toggle="modal" data-target="#exampleModal"><label>Yes, Decline</label></div>
+									<div class="d-flex col-5 keep" data-toggle="modal" data-target="#exampleModal" ><label>No, keep</label></div>
+								</div> 
+						  </div>
+						</div>
+					</div>					
+					<div id="myModal" class="modalss">
+						<div class="modal-contents" style="padding: 0 29px;">
+							<div class="modal-body" style="text-align: center;">
+								<div><img src="images/icons/95382-recycling-bin 1.png"></div>
+								Request Deleted				
+							</div>
+							<div class='d-flex' style="margin-top:5px; padding:10px; justify-content: space-evenly;">
+								<div class="col-8 decline-request" id="decline-buttons"><label>Back to all Requests</label></div>
+							</div> 
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="dropDownSelect1"></div>
+
+	<!--
+	===============================================================================================-->
+	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+	<script src="vendor/jquery/jquery-ui.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/attendance_requests.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="pnotify.custom.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>AMS LoggedIn Popup</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--===============================================================================================-->
+	<link type="image/png" href="images/icons/favicon.ico" rel="icon" />
+	<link href="vendor/jquery/jquery-ui.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link type="image/png" href="images/icons/Side Navigation.svg" rel="icon" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+
+	<!--===============================================================================================-->
+	<link type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/animate/animate.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/animsition/css/animsition.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/select2/select2.min.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="vendor/daterangepicker/daterangepicker.css" rel="stylesheet" />
+	<!--===============================================================================================-->
+	<link type="text/css" href="css/util.css" rel="stylesheet" />
+	<link type="text/css" href="css/main.css" rel="stylesheet" />
+	<link type="text/css" href="css/button.css" rel="stylesheet" />
+
+	<!--===============================================================================================-->
+</head>
+
+<body style="background: #F9F9F9;">
+	<div class="limiter-checkin attendance">
+		<div class="container-login100-checkin ">
+			<div class="wrap-login100-attendance" style="width: 390px;height: 600px;">
+				<div class="login-requestattendance ">
+					<input id="attendanceDetailId" name="attendanceDetailId" type="hidden" value>
+					<input type="hidden" id="hiddenFromDate" name="hiddenFromDate" />
+					<input type="hidden" id="hiddenToDate" name="hiddenToDate" />
+					<input type="hidden" id="hiddenWeekends" name="hiddenWeekends" />
+					<input type="hidden" id="weekendcount" name="weekendcount" />
+					<input type="hidden" id="leaveid" name="leaveid" />
+					<input type="hidden" id="leavet" name="leavet" />
+					<input type="hidden" id="halfdayleaveid" name="halfdayleaveid" />
+					<input type="hidden" id="dateformat" name="dateformat" />
+					<a href="checkin.html"> <i class="fa fa-arrow-left" aria-hidden="true"> </i> </a>
+					<span style="text-align: center;margin-left: 28%;">Request Leave</span>
+					<!-- <div class="">
+						<div id="leaveBalance" class="d-flex" style="justify-content:space-evenly; width: 100%;"></div> 
+					</div> -->
+				</div>
+				
+				<div class="sticky">
+						<div id="leaveBalance" class="d-flex" style="justify-content:space-evenly; width: 100%; flex-wrap: wrap;">	
+								<div class="skelten skeleton" id="1" style="border-radius: 10px; padding: 8px; width: 78px; height: 40px;">	
+								</div>
+								<div class="skelten skeleton" id="1" style=" border-radius: 10px; padding: 8px; width: 78px; height: 40px;">
+								</div>
+								<div class="skelten skeleton" id="1" style=" border-radius: 10px; padding: 8px; width: 78px; height: 40px;">
+								</div>					
+												
+						</div> 
+				</div> 
+				<form style="padding: 8px 15px 33px 15px; background: #F9F9F9; margin-top: 3px;">
+					<!-- <div class="form-group row">
+						<div id="leaveBalance" class="d-flex" style="justify-content:space-evenly; width: 100%;"></div> 
+					</div> -->
+					<div class="form-group row">
+						<select class="form-select" id="leave-type" aria-label="Default select example" style="margin-left: 15px; width: 307px; height: 50px;border: 1px solid rgba(0,0,0,.15) !important;color: #00000099;padding: 0 9px;" >
+							<option selected>Leave</option>
+							
+						  </select>
+							<label class="col-form-label request-checkin" style="margin-left: 25px">Select Leave Type</label>
+					</div>
+
+					
+					<div class="form-group row checkDiv checkin-place fh-leave" style="display: none;">
+						<select class="form-select" name="leavetype" id="leavetype" aria-label="Default select example" style="margin-left: 15px; width: 307px; height: 50px;border: 1px solid rgba(0,0,0,.15) !important;color: #00000099;padding: 0 9px;" disabled>
+							<option selected disabled>Half Day / Full Day</option>
+							<option value="full_day">Full Day</option>
+							<option value="half_day">Half Day</option>
+							
+							
+						</select>
+						<label class="col-form-label request-checkin" style="margin-left: 25px">Select Leave Duration Type
+						</label>
+					</div>
+					<div class="form-group row checkDiv checkin-place half-day" id="half-day" style="display: none;">
+						<div id="halfd">
+							<select class="form-select" name="halfdaytype" id="halfdaytype" aria-label="Default select example" style="margin-left: 15px; width: 307px; height: 50px;border: 1px solid rgba(0,0,0,.15) !important;color: #00000099;padding: 0 9px;">
+								<option selected disabled>First Half / Second Half</option>	
+								<option value="first_half">First Half</option>
+								<option value="second_half">Second Half</option>
+								
+							</select>
+							<label class="col-form-label request-checkin" style="margin-left: 25px">Select Leave Duration Type
+							</label>
+					    </div>
+					</div>
+					<div class="form-group row checkDiv checkout-place" style="display: none;">
+						
+						<div style="position: relative;">
+							<div class="input-group">
+								<input  type="text" class="form-control date-range" id="date-range" name="from" 
+								 required style="margin-left: 15px; width: 307px; height: 50px;border: 1px solid rgba(0,0,0,.15) !important;" autocomplete="off"  disabled/>								
+							  </div>
+								<img src="images/icons/Side Navigation.svg" alt="Calendar" style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px; height: 20px; width: 20px;z-index: 999;">
+						</div>
+						<label class="col-form-label request-checkin" style="margin-left: 25px">Select a date for request
+						</label>
+					</div>
+					<div class="form-group row checkDiv hideleave spoken_to" style="display: none;">
+						<!-- <label class="col-form-label" style="margin-left: 15px">Comment
+						</label> -->
+
+						<input type="text" class="form-control" id="spoken_to" name="spoken_to" required="required"
+							style="margin-left: 15px; width: 307px; height: 50px; border: 1px solid rgba(0,0,0,.15) !important;" placeholder="Discussed with whom ?"/>
+					</div>
+					<div class="form-group row checkDiv hideleave" >
+						<!-- <label class="col-form-label" style="margin-left: 15px">Comment
+						</label> -->
+
+						<textarea class="form-control" id="comment" name="comment" required="required"
+							style="margin-left: 15px; width: 307px;  border: 1px solid rgba(0,0,0,.15) !important; font-size: 15px;" placeholder="Comment" rows="9" maxlength="240"></textarea>
+					</div>
+					<div class="form-group row">
+						
+						<button class="btn btn-info updateDiv" id="Updatebtn" style="margin-left: 15px;background: #2B55B7;border-radius: 8px;" >
+							 Submit Request</button>
+					</div>
+					<div id="myModal" class="modalss">
+						<div class="modal-contents" style="padding: 0 29px;">
+							<div class="modal-body"  style="text-align: center;margin-top: 106px;">
+								<label class="col-form-label right " id="modeltext" name="modeltext">
+								</label>							
+							</div>
+							<div class='d-flex' style="margin-top:5px; padding:10px; justify-content: space-evenly;">
+								<div class="col-8 decline-request" id="decline-buttons"><label>Back to Request</label></div>
+							</div> 
+						</div>
+					</div>	
+					<!--<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" id="Logout">Logout</button>
+						</div>
+					</div>-->
+					<div id="myModal" class="modalss" >
+						<div class="modal-contents" style="padding: 0 29px;">
+							<div class="modal-body"  style="text-align: center;margin-top: 106px;">
+								<label class="col-form-label right " id="modeltext" name="modeltext">
+								</label>							
+							</div>
+							<div class='d-flex' style="margin-top:5px; padding:10px; justify-content: space-evenly;">
+								<div class="col-8 decline-request" id="decline-buttons"><label>Back to Request</label></div>
+							</div> 
+						</div>
+					</div>	
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="dropDownSelect1"></div>
+
+	<!--
+	===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+	<script src="vendor/jquery/jquery-ui.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/request_leave.js"></script>
+	<script src="js/jquery.min.js"></script>
+</body>
+
+</html>
